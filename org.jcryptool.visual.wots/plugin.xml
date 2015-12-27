@@ -22,6 +22,7 @@
             viewId="org.jcryptool.visual.wots.WotsView">
       </Visual>
    </extension> 
+   <!-- TODO there is no restartCommand available? e.g. org.jcryptool.visual.verifiablesecretsharing/plugin.xml -->
    <extension
          point="org.eclipse.ui.handlers">
       <handler

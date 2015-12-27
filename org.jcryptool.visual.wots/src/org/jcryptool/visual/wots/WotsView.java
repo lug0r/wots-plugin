@@ -1,23 +1,12 @@
 package org.jcryptool.visual.wots;
 
-import org.eclipse.jface.action.IMenuManager;
-import org.eclipse.jface.action.IToolBarManager;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.Composite;
-import org.eclipse.ui.part.ViewPart;
-import org.eclipse.swt.layout.GridLayout;
-import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.widgets.Text;
-import org.eclipse.swt.widgets.Button;
-import org.eclipse.swt.widgets.Combo;
-
 import java.io.File;
 import java.io.IOException;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -26,6 +15,14 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Combo;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Text;
+import org.eclipse.ui.part.ViewPart;
 import org.eclipse.wb.swt.ResourceManager;
 import org.eclipse.wb.swt.SWTResourceManager;
 
@@ -33,6 +30,7 @@ public class WotsView extends ViewPart {
 
 	private boolean german = true;
 
+	// TODO why WOTSView2 as id?
 	public static final String ID = "org.jcryptool.visual.wots.WOTSView2"; //$NON-NLS-1$
 	private Button btn_Genkey;
 	private Button btn_Sign;
@@ -125,6 +123,10 @@ public class WotsView extends ViewPart {
 	private String headline_txt;
 	private String invalidChar_txt;
 
+	/* 
+	 * TODOstore all images in an icon directory and load them correctly, look at 
+	 * org.jcryptool.visual.sig and the class org.jcryptool.visual.sig.ui.view.SigComposite
+	 */
 	public static String currentImg = "src/images/Overview2.JPG";
 
 	ScrolledComposite scrolledContainer;
@@ -132,9 +134,6 @@ public class WotsView extends ViewPart {
 	private Composite composite;
 	private Text txtTheWinternitzonetimesignatureIs;
 	private Text txtWinternitzOtsignaturewots;
-
-	public WotsView() {
-	}
 
 	/**
 	 * Create contents of the view part. The layout manager has no option to
@@ -1186,33 +1185,6 @@ public class WotsView extends ViewPart {
 
 		scrolledContainer.setContent(container);
 		scrolledContainer.setMinSize(1200, 800);
-
-		// createActions();
-		// initializeToolBar();
-		// initializeMenu();
-	}
-
-	/**
-	 * Create the actions.
-	 */
-	private void createActions() {
-		// Create the actions
-	}
-
-	/**
-	 * Initialize the toolbar.
-	 */
-	private void initializeToolBar() {
-		IToolBarManager toolbarManager = getViewSite().getActionBars()
-				.getToolBarManager();
-	}
-
-	/**
-	 * Initialize the menu.
-	 */
-	private void initializeMenu() {
-		IMenuManager menuManager = getViewSite().getActionBars()
-				.getMenuManager();
 	}
 
 	@Override
