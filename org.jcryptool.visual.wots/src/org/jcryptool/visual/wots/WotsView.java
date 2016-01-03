@@ -25,6 +25,7 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.part.ViewPart;
 import org.eclipse.wb.swt.ResourceManager;
 import org.eclipse.wb.swt.SWTResourceManager;
+import org.jcryptool.core.logging.utils.LogUtil;
 
 public class WotsView extends ViewPart {
 
@@ -123,11 +124,15 @@ public class WotsView extends ViewPart {
 	private String headline_txt;
 	private String invalidChar_txt;
 
+<<<<<<< HEAD
 	/* 
 	 * TODOstore all images in an icon directory and load them correctly, look at 
 	 * org.jcryptool.visual.sig and the class org.jcryptool.visual.sig.ui.view.SigComposite
 	 */
 	public static String currentImg = "src/images/Overview2.JPG";
+=======
+	public static String currentImg = "icons/Overview2.JPG";
+>>>>>>> lug0r/master
 
 	ScrolledComposite scrolledContainer;
 	Composite container;
@@ -330,12 +335,13 @@ public class WotsView extends ViewPart {
 							txt_message
 									.setText(org.jcryptool.visual.wots.files.WotsComposite
 											.readFile(path));
-						} catch (IOException e1) {
+						} catch (IOException ex) {
+				            LogUtil.logError(ex);
 							JOptionPane.showMessageDialog(null,
 									"Failed to load message from file",
 									"Error", JOptionPane.OK_OPTION);
 							txt_message.setText("Standard message");
-							e1.printStackTrace();
+							ex.printStackTrace();
 						}
 					}
 
@@ -433,7 +439,7 @@ public class WotsView extends ViewPart {
 					txt_Sigkey.setText("");
 					txt_Verifkey.setText("");
 					txt_Sig.setText("");
-					currentImg = "src/images/Overview2.JPG";
+					currentImg = "src/icons/Overview2.JPG";
 					Image tmp = new Image(
 							img_right.getDisplay(),
 							org.eclipse.ui.plugin.AbstractUIPlugin
@@ -562,7 +568,7 @@ public class WotsView extends ViewPart {
 					txt_Sigkey.setText("");
 					txt_Verifkey.setText("");
 					txt_Sig.setText("");
-					currentImg = "src/images/WOTSPlus.JPG";
+					currentImg = "icons/WOTSPlus.JPG";
 					Image tmp = new Image(
 							img_right.getDisplay(),
 							org.eclipse.ui.plugin.AbstractUIPlugin
@@ -728,7 +734,7 @@ public class WotsView extends ViewPart {
 						true, 1, 1));
 				img_right.setSize(96, 184);
 				img_right.setImage(ResourceManager.getPluginImage(
-						"org.jcryptool.visual.wots", "src/images/Overview2.JPG"));
+						"org.jcryptool.visual.wots", "icons/Overview2.JPG"));
 				img_right
 						.addControlListener(new org.jcryptool.visual.wots.files.ResizeListener(
 								img_right, composite));
@@ -907,7 +913,7 @@ public class WotsView extends ViewPart {
 
 						// Set Image & Output field for WOTS
 						txt_Output.setText(outGenKeys_txt);
-						currentImg = "src/images/Key_Generation.JPG";
+						currentImg = "icons/Key_Generation.JPG";
 						Image tmp = new Image(
 								img_right.getDisplay(),
 								org.eclipse.ui.plugin.AbstractUIPlugin
@@ -928,7 +934,7 @@ public class WotsView extends ViewPart {
 
 						// Set Image & Output field for WOTS+
 						txt_Output.setText(outGenKeysPlus_txt);
-						currentImg = "/src/images/WOTSPlus.JPG";
+						currentImg = "/icons/WOTSPlus.JPG";
 						Image tmp = new Image(
 								img_right.getDisplay(),
 								org.eclipse.ui.plugin.AbstractUIPlugin
@@ -981,7 +987,7 @@ public class WotsView extends ViewPart {
 
 						// Set Image & Output field for WOTS
 						txt_Output.setText(outGenSig_txt);
-						currentImg = "src/images/Signature_Generation.JPG";
+						currentImg = "icons/Signature_Generation.JPG";
 						Image tmp = new Image(
 								img_right.getDisplay(),
 								org.eclipse.ui.plugin.AbstractUIPlugin
@@ -1002,7 +1008,7 @@ public class WotsView extends ViewPart {
 
 						// Set Image & Output field for WOTS+
 						txt_Output.setText(outGenSigPlus_txt);
-						currentImg = "src/images/WOTSPlus.JPG";
+						currentImg = "icons/WOTSPlus.JPG";
 						Image tmp = new Image(
 								img_right.getDisplay(),
 								org.eclipse.ui.plugin.AbstractUIPlugin
@@ -1057,7 +1063,7 @@ public class WotsView extends ViewPart {
 
 						// Set Image & Output field for WOTS
 						txt_Output.setText(outVerSig_txt);
-						currentImg = "src/images/Signature_Verification.JPG";
+						currentImg = "icons/Signature_Verification.JPG";
 						Image tmp = new Image(
 								img_right.getDisplay(),
 								org.eclipse.ui.plugin.AbstractUIPlugin
@@ -1078,7 +1084,7 @@ public class WotsView extends ViewPart {
 
 						// Set Image & Output field for WOTS+
 						txt_Output.setText(outVerSigPlus_txt);
-						currentImg = "src/images/WOTSPlus.JPG";
+						currentImg = "icons/WOTSPlus.JPG";
 						Image tmp = new Image(
 								img_right.getDisplay(),
 								org.eclipse.ui.plugin.AbstractUIPlugin
@@ -1095,7 +1101,7 @@ public class WotsView extends ViewPart {
 						img_right.setImage(tmp);
 
 					} else {
-
+					    
 						JOptionPane
 								.showMessageDialog(
 										null,
@@ -1186,7 +1192,11 @@ public class WotsView extends ViewPart {
 		scrolledContainer.setContent(container);
 		scrolledContainer.setMinSize(1200, 800);
 	}
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> lug0r/master
 	@Override
 	public void setFocus() {
 		// Set the focus
@@ -1297,7 +1307,7 @@ public class WotsView extends ViewPart {
 		txt_Sig.setText("");
 		txt_Verifkey.setText("");
 		txt_Output.setText(outWelcome_txt);
-		currentImg = "src/images/Overview2.JPG";
+		currentImg = "icons/Overview2.JPG";
 		Image tmp = new Image(img_right.getDisplay(),
 				org.eclipse.ui.plugin.AbstractUIPlugin
 						.imageDescriptorFromPlugin("org.jcryptool.visual.wots",
@@ -1418,7 +1428,7 @@ public class WotsView extends ViewPart {
 		txt_Bi.setText(b);
 		disableDetails();
 
-		currentImg = "src/images/Overview2.JPG";
+		currentImg = "icons/Overview2.JPG";
 		Image tmp = new Image(img_right.getDisplay(),
 				org.eclipse.ui.plugin.AbstractUIPlugin
 						.imageDescriptorFromPlugin("org.jcryptool.visual.wots",
