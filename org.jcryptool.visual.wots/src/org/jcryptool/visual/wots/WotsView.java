@@ -31,7 +31,6 @@ public class WotsView extends ViewPart {
 
 	private boolean german = true;
 
-	// TODO why WOTSView2 as id?
 	public static final String ID = "org.jcryptool.visual.wots.WOTSView2"; //$NON-NLS-1$
 	private Button btn_Genkey;
 	private Button btn_Sign;
@@ -124,15 +123,7 @@ public class WotsView extends ViewPart {
 	private String headline_txt;
 	private String invalidChar_txt;
 
-<<<<<<< HEAD
-	/* 
-	 * TODOstore all images in an icon directory and load them correctly, look at 
-	 * org.jcryptool.visual.sig and the class org.jcryptool.visual.sig.ui.view.SigComposite
-	 */
-	public static String currentImg = "src/images/Overview2.JPG";
-=======
 	public static String currentImg = "icons/Overview2.JPG";
->>>>>>> lug0r/master
 
 	ScrolledComposite scrolledContainer;
 	Composite container;
@@ -1192,11 +1183,7 @@ public class WotsView extends ViewPart {
 		scrolledContainer.setContent(container);
 		scrolledContainer.setMinSize(1200, 800);
 	}
-<<<<<<< HEAD
-
-=======
 	
->>>>>>> lug0r/master
 	@Override
 	public void setFocus() {
 		// Set the focus
